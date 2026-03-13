@@ -1,6 +1,6 @@
 <?php
 
-require "confing.php";
+require "config.php";
 
 if(isset($_POST['nome'])){
 
@@ -24,6 +24,7 @@ header("Location: login.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro | Stellar Academy</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="login-box">

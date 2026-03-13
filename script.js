@@ -1,26 +1,53 @@
-const stars = document.createElement("div");
-
-stars.style.position="fixed";
-stars.style.top="0";
-stars.style.left="0";
-stars.style.width="100%";
-stars.style.height="100%";
-stars.style.zIndex="-1";
-
-document.body.appendChild(stars);
+const starsContainer = document.createElement("div");
+starsContainer.classList.add("stars");
+document.body.appendChild(starsContainer);
 
 for(let i=0;i<120;i++){
 
-let star=document.createElement("div");
-
-star.style.position="absolute";
-star.style.width="2px";
-star.style.height="2px";
-star.style.background="white";
+const star=document.createElement("div");
+star.classList.add("star");
 
 star.style.left=Math.random()*100+"vw";
 star.style.top=Math.random()*100+"vh";
 
-stars.appendChild(star);
+star.style.animationDuration=(Math.random()*3+2)+"s";
 
+starsContainer.appendChild(star);
 }
+
+const buttons=document.querySelectorAll("button");
+
+buttons.forEach(btn=>{
+
+btn.addEventListener("click",function(e){
+
+const sparkle=document.createElement("span");
+
+sparkle.style.position="absolute";
+sparkle.style.width="10px";
+sparkle.style.height="10px";
+sparkle.style.background="white";
+sparkle.style.borderRadius="50%";
+sparkle.style.pointerEvents="none";
+
+sparkle.style.left=e.offsetX+"px";
+sparkle.style.top=e.offsetY+"px";
+
+sparkle.animate([
+{transform:"scale(0)",opacity:1},
+{transform:"scale(6)",opacity:0}
+],{
+duration:600,
+easing:"ease-out"
+});
+
+btn.appendChild(sparkle);
+
+setTimeout(()=>{
+sparkle.remove();
+},600);
+
+});
+
+});
+

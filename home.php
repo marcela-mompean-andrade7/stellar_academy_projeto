@@ -14,12 +14,14 @@ header("Location: login.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos | Stellar Academy</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <h2>Stellar Academy</h2>
         <nav>
             <a href="logout.php">Sair</a>
+            <a href="perfil.php">Perfil</a>
         </nav>
     </header>
 
