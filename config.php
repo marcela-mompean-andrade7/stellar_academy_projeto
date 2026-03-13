@@ -2,9 +2,9 @@
 
 session_start();
 
-$host = "localhost";
+$host = "localhost:3307";
 $user = "root";
-$pass = " ";
+$pass = "";
 $db = "stellar_academy";
 
 $conn = new mysqli($host,$user,$pass,$db);
